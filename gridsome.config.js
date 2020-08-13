@@ -10,6 +10,9 @@ module.exports = {
   plugins: [
     "@gridsome/transformer-remark",
     {
+      use: "gridsome-plugin-tailwindcss",
+    },
+    {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Post",

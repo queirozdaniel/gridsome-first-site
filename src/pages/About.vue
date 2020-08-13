@@ -1,7 +1,7 @@
 <template>
   <Layout :showFooter="true">
-    <h1>About us</h1>
-    <p>{{$static.metadata.siteDescription}}</p>
+    <h1 class="text-6xl">About us</h1>
+    <p>{{ $static.metadata.siteDescription }}</p>
   </Layout>
 </template>
 
