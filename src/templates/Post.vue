@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div v-html="$page.post.content" />
+    <div class="py-16 px-8 shadow-md" v-html="$page.post.content" />
   </Layout>
 </template>
 

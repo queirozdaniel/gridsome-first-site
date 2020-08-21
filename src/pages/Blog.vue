@@ -1,24 +1,26 @@
 <template>
   <Layout>
-    <h1>Blog</h1>
-    <article v-for="edge in $page.allPost.edges" :key="edge.node.id">
+    <h1 class="text-xl text-center">Blog</h1>
+    <article class="shadow-md my-8 p-4" v-for="edge in $page.allPost.edges" :key="edge.node.id">
       <g-image :src="edge.node.cover_image" />
       <h2>{{ edge.node.title }}</h2>
       <p>{{ edge.node.excerpt }}</p>
       <p>Posted {{ edge.node.date }} - {{ edge.node.timeToRead }} min read</p>
-      <div>
+      <div class="my-8">
         <g-link
+          class="bg-gray-200 py-4 px-8 rounded-sm mx-4"
           style="padding: .25rem"
           v-for="tag in edge.node.tags"
           :to="tag.path"
           :key="tag.id"
-          >#{{ tag.id }}</g-link
-        >
+        >#{{ tag.id }}</g-link>
       </div>
-      <g-link :to="edge.node.path"> Read Post</g-link>
+      <div class="text-center">
+        <g-link class="font-semibold" :to="edge.node.path">Read Post</g-link>
+      </div>
     </article>
 
-    <Pager :info="$page.allPost.pageInfo" linkClass="pager" />
+    <Pager :info="$page.allPost.pageInfo" linkClass="pager text-center" />
   </Layout>
 </template>
 
